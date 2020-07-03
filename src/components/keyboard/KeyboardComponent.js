@@ -4,7 +4,7 @@ import { detect } from 'detect-browser'
 import { specialKeysFirefox, specialKeysChrome } from './specialKeys'
 import do1_azerty from './mappings/do1_azerty'
 import Tone from 'tone'
-import SampleLibrary from '../../tonejs-instruments/Tonejs-Instruments'
+// import SampleLibrary from '../../tonejs-instruments/Tonejs-Instruments'
 import { Dropdown } from 'react-bootstrap'
 import './main.css'
 
@@ -131,12 +131,12 @@ export default class KeyboardComponent extends Component {
         }
     }
 
-    setInstrument = (e) => {
-        const instruments = e.target.innerHTML
-        const instrument = SampleLibrary.load({instruments})
+    // setInstrument = (e) => {
+    //     const instruments = e.target.innerHTML
+    //     const instrument = SampleLibrary.load({instruments})
 
         
-    }
+    // }
 
     render() {
         return (
