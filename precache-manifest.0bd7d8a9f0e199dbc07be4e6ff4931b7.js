@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1e744de77a1dd000b1820d74e955d62f",
+    "revision": "2275a7e6d162da06aa3cc06dd55e68e2",
     "url": "/cba-browser/index.html"
   },
   {
