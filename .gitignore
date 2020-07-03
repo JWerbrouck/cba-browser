@@ -11,6 +11,8 @@
 # production
 /build
 
+src/tonejs-instruments
+
 # misc
 .DS_Store
 .env.local
