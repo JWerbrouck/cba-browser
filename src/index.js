@@ -3,11 +3,25 @@ import ReactDOM from 'react-dom';
 import './index.css';
 import App from './App';
 import * as serviceWorker from './serviceWorker';
+import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import FutureComponent from './components/future/futureComponent'
+import InfoComponent from "./components/info/infoComponent"
+import NavbarComponent from './components/navbar/NavbarComponent'
 
-ReactDOM.render(
+const routing = (
   <React.StrictMode>
-    <App />
-  </React.StrictMode>,
+    {/* <NavbarComponent/> */}
+    <Router>
+      <div>
+        <Route exact path="/" component={App} />
+        {/* <Route path="/info" component={InfoComponent} />
+        <Route path="/future" component={FutureComponent} /> */}
+      </div>
+    </Router>
+  </React.StrictMode>
+)
+
+ReactDOM.render(routing,
   document.getElementById('root')
 );
 

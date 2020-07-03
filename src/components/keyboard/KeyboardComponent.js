@@ -73,16 +73,13 @@ export default class KeyboardComponent extends Component {
     }
 
     whenKeyDown = (e) => {
-        const now = new Date()
-        const key = this.getKeyPressed(e.keyCode);
         try {
+            const key = this.getKeyPressed(e.keyCode);
             const note = do1_azerty[key].note
             if (!this.state.played.includes(key) && note !== undefined) {
                 this.state.synth.triggerAttack([note], Tone.context.currentTime)
                 this.press(key)
-                this.setState({ played: [...this.state.played, key] }, () => {
-                    const later = new Date()
-                })
+                this.setState({ played: [...this.state.played, key] })
             }
         } catch (error) {
             return
@@ -91,12 +88,16 @@ export default class KeyboardComponent extends Component {
     }
 
     whenKeyUp = (e) => {
-        const key = this.getKeyPressed(e.keyCode);
-        const note = do1_azerty[key].note
-        this.state.synth.triggerRelease([note])
-        this.depress(key)
-        const played = this.state.played.filter((val, i, arr) => key !== val)
-        this.setState({ played })
+        try {
+            const key = this.getKeyPressed(e.keyCode);
+            const note = do1_azerty[key].note
+            this.state.synth.triggerRelease([note])
+            this.depress(key)
+            const played = this.state.played.filter((val, i, arr) => key !== val)
+            this.setState({ played })
+        } catch (error) {
+            return
+        }
     }
 
     getKeyPressed = (keyCode) => {
