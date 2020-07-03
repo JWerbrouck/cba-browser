@@ -141,7 +141,6 @@ export default class KeyboardComponent extends Component {
     render() {
         return (
             <div>      
-                <p className="info">Use your keyboard as an accordion keyboard</p>
                 <Layout pressedKeys={this.state.playing} />
             </div>
         )
