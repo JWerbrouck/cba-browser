@@ -11,7 +11,7 @@
 # production
 /build
 
-src/tonejs-instruments
+/src/tonejs-instruments
 
 # misc
 .DS_Store
