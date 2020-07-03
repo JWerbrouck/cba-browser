@@ -6,6 +6,8 @@ import do1_azerty from './mappings/do1_azerty'
 import Tone from 'tone'
 import SampleLibrary from '../../tonejs-instruments/Tonejs-Instruments'
 import { Dropdown } from 'react-bootstrap'
+import './main.css'
+
 
 
 
@@ -24,7 +26,8 @@ export default class KeyboardComponent extends Component {
     componentDidMount = () => {
         document.addEventListener("keyup", e => this.whenKeyUp(e))
         document.addEventListener("keydown", e => this.whenKeyDown(e))
-        console.log('SampleLibrary', SampleLibrary)
+        document.addEventListener("mousedown", e => this.whenClicked(e))
+        document.addEventListener("mouseup", e => this.whenClickReleased(e))
         const browser = detect().name
         switch (browser) {
             case 'firefox':
@@ -35,15 +38,38 @@ export default class KeyboardComponent extends Component {
                 break;
             default:
                 break;
+        }       
+    }
+
+    whenClicked = (e) => {
+        try {
+            const key = e.target.attributes.id.value
+            const note = do1_azerty[key].note
+            if (!this.state.played.includes(key) && note !== undefined) {
+                this.state.synth.triggerAttack([note], Tone.context.currentTime)
+                this.press(key)
+                this.setState({ played: [...this.state.played, key] }, () => {
+                    const later = new Date()
+                })
+            }
+        } catch (error) {
+            return
         }
+    }
 
-        var piano = SampleLibrary.load({
-            instruments: "piano"
-        });
-        
-        console.log('piano', piano)
 
-        
+    whenClickReleased = (e) => {
+        console.log('mouseup')
+        try {
+            const key = e.target.attributes.id.value
+            const note = do1_azerty[key].note
+            this.state.synth.triggerRelease([note])
+            this.depress(key)
+            const played = this.state.played.filter((val, i, arr) => key !== val)
+            this.setState({ played })
+        } catch (error) {
+            return
+        }
     }
 
     whenKeyDown = (e) => {
@@ -59,7 +85,6 @@ export default class KeyboardComponent extends Component {
                 })
             }
         } catch (error) {
-            console.log('error', error)
             return
         }
 
@@ -115,9 +140,10 @@ export default class KeyboardComponent extends Component {
 
     render() {
         return (
-            <div>
+            <div>      
+                <p className="info">Use your keyboard as an accordion keyboard</p>
                 <Layout pressedKeys={this.state.playing} />
             </div>
         )
     }
-}
+} 

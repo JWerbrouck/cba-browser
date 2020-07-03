@@ -144,12 +144,12 @@ select {
 }
 
 .white {
-	color: rgb(189, 189, 189);
+	color: black;
 	background-color: #fff;
 }
 
 .black {
-	color: rgb(104, 104, 104);
+	color: white;
 	background-color: #000;
 }
 
