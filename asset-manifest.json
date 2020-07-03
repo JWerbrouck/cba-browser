@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/cba-browser/static/css/main.0c2827b3.chunk.css",
+    "main.js": "/cba-browser/static/js/main.139f6a1c.chunk.js",
+    "main.js.map": "/cba-browser/static/js/main.139f6a1c.chunk.js.map",
+    "runtime-main.js": "/cba-browser/static/js/runtime-main.830f970e.js",
+    "runtime-main.js.map": "/cba-browser/static/js/runtime-main.830f970e.js.map",
+    "static/css/2.af3c1da9.chunk.css": "/cba-browser/static/css/2.af3c1da9.chunk.css",
+    "static/js/2.ba5dacce.chunk.js": "/cba-browser/static/js/2.ba5dacce.chunk.js",
+    "static/js/2.ba5dacce.chunk.js.map": "/cba-browser/static/js/2.ba5dacce.chunk.js.map",
+    "index.html": "/cba-browser/index.html",
+    "precache-manifest.38b2591604f07590066a4e03ab938d69.js": "/cba-browser/precache-manifest.38b2591604f07590066a4e03ab938d69.js",
+    "service-worker.js": "/cba-browser/service-worker.js",
+    "static/css/2.af3c1da9.chunk.css.map": "/cba-browser/static/css/2.af3c1da9.chunk.css.map",
+    "static/css/main.0c2827b3.chunk.css.map": "/cba-browser/static/css/main.0c2827b3.chunk.css.map",
+    "static/js/2.ba5dacce.chunk.js.LICENSE.txt": "/cba-browser/static/js/2.ba5dacce.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.830f970e.js",
+    "static/css/2.af3c1da9.chunk.css",
+    "static/js/2.ba5dacce.chunk.js",
+    "static/css/main.0c2827b3.chunk.css",
+    "static/js/main.139f6a1c.chunk.js"
+  ]
+}
