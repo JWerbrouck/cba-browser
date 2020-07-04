@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "7117ff5c0839a055740629024e2103ee",
+    "revision": "77335ffb7fbca26f355cee48db9149b0",
     "url": "/cba-browser/index.html"
   },
   {
@@ -8,7 +8,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cba-browser/static/css/2.af3c1da9.chunk.css"
   },
   {
-    "revision": "5135e79d004af1fb442a",
+    "revision": "c23e3626f7da845f40fe",
     "url": "/cba-browser/static/css/main.0bc72032.chunk.css"
   },
   {
@@ -20,8 +20,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "/cba-browser/static/js/2.c36ced41.chunk.js.LICENSE.txt"
   },
   {
-    "revision": "5135e79d004af1fb442a",
-    "url": "/cba-browser/static/js/main.942095e8.chunk.js"
+    "revision": "c23e3626f7da845f40fe",
+    "url": "/cba-browser/static/js/main.7f38be00.chunk.js"
   },
   {
     "revision": "b3380e4c97e34fba6b8b",
