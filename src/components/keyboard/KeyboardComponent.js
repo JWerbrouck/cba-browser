@@ -19,7 +19,9 @@ export default class KeyboardComponent extends Component {
         this.state = {
             played: [],
             synth: new Tone.PolySynth(4, Tone.Synth).toMaster(),
-            specialKeys: []
+            specialKeys: [],
+            buggyNotes: ["A4"]
+
         }
     }
 
@@ -47,6 +49,13 @@ export default class KeyboardComponent extends Component {
             const note = do1_azerty[key].note
             if (!this.state.played.includes(key) && note !== undefined) {
                 this.state.synth.triggerAttack([note], Tone.context.currentTime)
+                this.state.buggyNotes.forEach(note => {
+                    this.state.synth.triggerRelease([note])
+                    let buggyNotes = this.state.buggyNotes.filter((value, index, arr) => {
+                        return value != note
+                    })
+                    this.setState({buggyNotes})
+                })
                 this.press(key)
                 this.setState({ played: [...this.state.played, key] }, () => {
                     const later = new Date()
@@ -78,6 +87,13 @@ export default class KeyboardComponent extends Component {
             const note = do1_azerty[key].note
             if (!this.state.played.includes(key) && note !== undefined) {
                 this.state.synth.triggerAttack([note], Tone.context.currentTime)
+                this.state.buggyNotes.forEach(note => {
+                    this.state.synth.triggerRelease([note])
+                    let buggyNotes = this.state.buggyNotes.filter((value, index, arr) => {
+                        return value != note
+                    })
+                    this.setState({buggyNotes})
+                })
                 this.press(key)
                 this.setState({ played: [...this.state.played, key] })
             }
